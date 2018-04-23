@@ -4,8 +4,8 @@
     <Files>
       <File FileName="Assets/Scripts/armaScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PlayerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjetilScript.cs" Line="23" Column="17" />
-      <File FileName="Assets/Scripts/SubInimigoScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ProjetilScript.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/SubInimigoScript.cs" Line="23" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

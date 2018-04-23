@@ -21,7 +21,7 @@ public class ProjetilScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D c){
 		print ("entrei no colider");
 		//como o peixinho eh trigger nao precisa colocar c.gameobject.tag
-		if (c.tag == "SubInimigo") {
+		if (c.gameObject.tag == "SubInimigo") {
 			Destroy(c.gameObject);
 		}
 	}

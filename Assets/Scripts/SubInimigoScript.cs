@@ -20,11 +20,5 @@ public class SubInimigoScript : MonoBehaviour {
             ); 
 	}
 
-	void OnTriggerEnter2D(Collider2D c){
-		print ("atingi o inimigo");
-		//como o peixinho eh trigger nao precisa colocar c.gameobject.tag
-		if (c.tag == "projetil") {
-			Destroy(c.gameObject);
-		}
-	}
+
 }
