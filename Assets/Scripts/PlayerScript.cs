@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
@@ -9,15 +10,20 @@ public class PlayerScript : MonoBehaviour {
 	Animator animator;
 	public GameObject player;
 	public Camera cam;
+	public int vida;
 
 	//Transform eh o unico  componente do Sensor (GameObject)
 	public Transform chaoVerificador;
 	bool estaoNoChao;
 
+	public Transform abismoDireita;
+	public Transform abismoEsquerda;
+
 //	SpriteRenderer spriteRender;
 	Rigidbody2D rb;
 	Vector3 posicaoInicialCamera;
 
+	float intervalo = 0.9f;
 	// Use this for initialization
 	void Start () {
 		//Interface para os componentes
@@ -38,12 +44,12 @@ public class PlayerScript : MonoBehaviour {
 		estaoNoChao = Physics2D.Linecast(transform.position, 
 			chaoVerificador.position, 
 			1 << LayerMask.NameToLayer("Piso"));
-		print (estaoNoChao);
+		//print (estaoNoChao);
 
 		//Pular
 		if (Input.GetButtonDown ("Jump") && estaoNoChao == true) {
-			rb.AddForce (Vector2.up * impulso);
-//			rb.velocity = new Vector2 (0.0f, impulso);
+			pular();
+//		 
 		}
 
 		//Orientacao
@@ -63,4 +69,66 @@ public class PlayerScript : MonoBehaviour {
 		//Camera
 		cam.transform.position = new Vector3(transform.position.x, cam.transform.position.y, cam.transform.position.z);
 	}
+
+
+	void OnCollisionEnter2D(Collision2D c){
+		//Subtrai vida quando for atingido pelo projetil
+		if (c.gameObject.tag == "SubInimigo") {
+			PrincipalScript.vidas--;
+			if (PrincipalScript.vidas <= 0) {
+				PrincipalScript.resultado = "GAMER OVER";
+				SceneManager.LoadScene ("Start");	
+			}
+			Destroy (c.gameObject);
+//			StartCoroutine (perdeSangue());
+		}
+
+		//Se a vaqueira cai no abismo
+		if (c.gameObject.tag == "abismo" && transform.position.y <= c.gameObject.transform.position.y) {
+			print ("cai no abismo");
+			PrincipalScript.vidas--;
+			if (PrincipalScript.vidas <= 0) {
+				SceneManager.LoadScene ("Start");				
+			} else {
+				rb = GetComponent<Rigidbody2D> ();
+				animator = player.GetComponent<Animator> ();	
+				posicaoInicialCamera = cam.transform.position;
+			}
+		}
+
+		//QUando a vaqueira ganha o jogo
+		if (c.gameObject.tag == "Finish") {
+			print ("entrei no finish");
+				PrincipalScript.resultado = "YOU WIN";
+				SceneManager.LoadScene ("Start");	
+		}
+	} 
+
+
+
+
+
+	void pular(){
+			rb.velocity = new Vector2 (0.0f, impulso);
+		}
+
+
+
+	IEnumerator perdeSangue(){
+
+
+		GetComponent<SpriteRenderer> ().enabled = false;
+		yield return new WaitForSeconds (intervalo);
+		GetComponent<SpriteRenderer> ().enabled = true;
+		yield return new WaitForSeconds (intervalo);
+		GetComponent<SpriteRenderer> ().enabled = false;
+		yield return new WaitForSeconds (intervalo);
+		GetComponent<SpriteRenderer> ().enabled = true;
+		yield return new WaitForSeconds (intervalo); 
+
+
+	}
+
+	
+
 }

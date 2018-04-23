@@ -12,7 +12,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   - m_Name: pMover
     m_Type: 1
@@ -24,7 +24,7 @@ AnimatorController:
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 0
+    m_DefaultBool: 1
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
@@ -455,16 +455,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102860753648318756}
-    m_Position: {x: -120, y: 60, z: 0}
+    m_Position: {x: 72, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102092717674395764}
-    m_Position: {x: -60, y: 192, z: 0}
+    m_Position: {x: 24, y: 228, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102235265657417382}
-    m_Position: {x: 168, y: 60, z: 0}
+    m_Position: {x: 336, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102099646023706664}
-    m_Position: {x: 288, y: 180, z: 0}
+    m_Position: {x: 348, y: 228, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
