@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6D1EC57F-7263-E141-D433-195896756F41}</ProjectGuid>
+    <ProjectGuid>{04E9F463-42E5-87FE-F08B-27E24175AA9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,7 +62,7 @@
      <Compile Include="Assets\Scripts\SubInimigoScript.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>/Users/liatiemy/Documents/Games/Desenvolvimento/GamesFiap/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>/Users/liatiemy/Documents/Games/Desenvolvimento/GamesFiap_v1/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIAutomation">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>

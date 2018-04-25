@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesFiap_v1", "Assembly-CSharp.csproj", "{04E9F463-42E5-87FE-F08B-27E24175AA9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04E9F463-42E5-87FE-F08B-27E24175AA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E9F463-42E5-87FE-F08B-27E24175AA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E9F463-42E5-87FE-F08B-27E24175AA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E9F463-42E5-87FE-F08B-27E24175AA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

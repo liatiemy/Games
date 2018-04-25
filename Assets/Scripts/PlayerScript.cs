@@ -16,8 +16,6 @@ public class PlayerScript : MonoBehaviour {
 	public Transform chaoVerificador;
 	bool estaoNoChao;
 
-	public Transform abismoDireita;
-	public Transform abismoEsquerda;
 
 //	SpriteRenderer spriteRender;
 	Rigidbody2D rb;
@@ -84,15 +82,13 @@ public class PlayerScript : MonoBehaviour {
 		}
 
 		//Se a vaqueira cai no abismo
-		if (c.gameObject.tag == "abismo" && transform.position.y <= c.gameObject.transform.position.y) {
+		if (c.gameObject.tag == "abismo" /*&& transform.position.y <= c.gameObject.transform.position.y*/) {
 			print ("cai no abismo");
 			PrincipalScript.vidas--;
 			if (PrincipalScript.vidas <= 0) {
 				SceneManager.LoadScene ("Start");				
 			} else {
-				rb = GetComponent<Rigidbody2D> ();
-				animator = player.GetComponent<Animator> ();	
-				posicaoInicialCamera = cam.transform.position;
+				SceneManager.LoadScene ("Game1");	
 			}
 		}
 

@@ -19,11 +19,17 @@ public class SubInimigoScript : MonoBehaviour {
 	void Update () {
 		foiAtingido = false;
         // Persegue o alvo
-        transform.position = Vector2.Lerp(
-            transform.position, alvo.transform.position, 
-            velocidade * Time.deltaTime
-            );
 
+		if (alvo != null) {
+
+			float flipCheck = transform.position.x - alvo.transform.position.x; 
+			GetComponent<SpriteRenderer> ().flipX = flipCheck > 0; 
+
+        	transform.position = Vector2.Lerp(
+           	 	transform.position, alvo.transform.position, 
+            	velocidade * Time.deltaTime
+            );
+		}
 		animator.SetBool("pAtingido", foiAtingido);
 	}
 
