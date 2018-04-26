@@ -14,5 +14,6 @@ public class UIScript : MonoBehaviour {
 		// Atualiza o placar
 		txtPontos.text = PrincipalScript.pontos.ToString();
 		txtVida.text = PrincipalScript.vidas.ToString();
+		txtResultado.text = PrincipalScript.resultado.ToString ();
 	}
 }

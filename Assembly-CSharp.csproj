@@ -52,9 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\armaScript.cs" />
-     <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\InimigoScript.cs" />
-     <Compile Include="Assets\Scripts\MoveFundoScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\PrincipalScript.cs" />
      <Compile Include="Assets\Scripts\ProjetilScript.cs" />

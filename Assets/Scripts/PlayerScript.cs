@@ -17,15 +17,16 @@ public class PlayerScript : MonoBehaviour {
 	bool estaoNoChao;
 
 
-//	SpriteRenderer spriteRender;
+	SpriteRenderer spriteRender;
 	Rigidbody2D rb;
 	Vector3 posicaoInicialCamera;
+	public float danoTempo = 1f;
 
 	float intervalo = 0.9f;
 	// Use this for initialization
 	void Start () {
 		//Interface para os componentes
-//		spriteRender = GetComponent<SpriteRenderer>();
+		spriteRender = player.GetComponent<SpriteRenderer>();
 		rb = GetComponent<Rigidbody2D> ();
 		animator = player.GetComponent<Animator> ();	
 		posicaoInicialCamera = cam.transform.position;
@@ -74,11 +75,12 @@ public class PlayerScript : MonoBehaviour {
 		if (c.gameObject.tag == "SubInimigo") {
 			PrincipalScript.vidas--;
 			if (PrincipalScript.vidas <= 0) {
-				PrincipalScript.resultado = "GAMER OVER";
+				PrincipalScript.resultado = "GAME OVER";
 				SceneManager.LoadScene ("Start");	
 			}
 			Destroy (c.gameObject);
-//			StartCoroutine (perdeSangue());
+
+			StartCoroutine(perdeVida());
 		}
 
 		//Se a vaqueira cai no abismo
@@ -100,7 +102,17 @@ public class PlayerScript : MonoBehaviour {
 		}
 	} 
 
-
+	IEnumerator perdeVida(){
+		print ("Deve piscar");
+//		Physics2D.IgnoreLayerCollision(9, 10,true);
+//		for (float i = 0; i < danoTempo; i += 0.2f){
+			spriteRender.enabled = false;
+			yield return new WaitForSeconds(0.1f);
+			spriteRender.enabled = true;
+			yield return new WaitForSeconds(0.2f);
+//		}
+//		Physics2D.IgnoreLayerCollision(9, 10, false);
+	}
 
 
 

@@ -20,6 +20,7 @@ public class InimigoScript : MonoBehaviour {
 		//Subtrai vida quando for atingido pelo projetil
 		if (c.gameObject.tag == "projetil") {
 			vidas--;
+			Destroy (c.gameObject);
 			//Destroi o inimigo quando encerrar as vidas
 			if (vidas <= 0) {
 				Destroy (gameObject);

@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alvo: {fileID: 1634849075656750, guid: 028d2aa41966942fcb6cfed2132f7f78, type: 2}
-  velocidade: 0.05
+  velocidade: 0.5
 --- !u!212 &212854513176561430
 SpriteRenderer:
   m_ObjectHideFlags: 1

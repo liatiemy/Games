@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 160dc23a42921a14c8ee5d1569313c67
+timeCreated: 1512816548
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pixeldust Expanded
+  fontNames:
+  - Pixeldust Expanded
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
