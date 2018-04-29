@@ -11,7 +11,8 @@ public class PlayerScript : MonoBehaviour {
 	public GameObject player;
 	public Camera cam;
 	public int vida;
-
+	public GameObject imagemGameOver;
+	public GameObject imagemWin;
 	//Transform eh o unico  componente do Sensor (GameObject)
 	public Transform chaoVerificador;
 	bool estaoNoChao;
@@ -75,12 +76,13 @@ public class PlayerScript : MonoBehaviour {
 		if (c.gameObject.tag == "SubInimigo") {
 			PrincipalScript.vidas--;
 			if (PrincipalScript.vidas <= 0) {
-				PrincipalScript.resultado = "GAME OVER";
-				SceneManager.LoadScene ("Start");	
+				StartCoroutine (GameOver ());	
+			} else {
+				StartCoroutine (perdeVida ());
 			}
-			Destroy (c.gameObject);
+				Destroy (c.gameObject);
 
-			StartCoroutine(perdeVida());
+
 		}
 
 		//Se a vaqueira cai no abismo
@@ -88,7 +90,7 @@ public class PlayerScript : MonoBehaviour {
 			print ("cai no abismo");
 			PrincipalScript.vidas--;
 			if (PrincipalScript.vidas <= 0) {
-				SceneManager.LoadScene ("Start");				
+				StartCoroutine (GameOver());				
 			} else {
 				SceneManager.LoadScene ("Game1");	
 			}
@@ -97,8 +99,8 @@ public class PlayerScript : MonoBehaviour {
 		//QUando a vaqueira ganha o jogo
 		if (c.gameObject.tag == "Finish") {
 			print ("entrei no finish");
-				PrincipalScript.resultado = "YOU WIN";
-				SceneManager.LoadScene ("Start");	
+				//PrincipalScript.resultado = "YOU WIN";
+			StartCoroutine(Win());	
 		}
 	} 
 
@@ -136,6 +138,22 @@ public class PlayerScript : MonoBehaviour {
 
 
 	}
+
+	IEnumerator GameOver(){		
+		imagemGameOver.SetActive(true);
+		yield return new WaitForSeconds (2f);
+		SceneManager.LoadScene ("Start", LoadSceneMode.Single);
+
+
+	}
+
+	IEnumerator Win(){
+		imagemWin.SetActive (true);
+		yield return new WaitForSeconds (1f);
+		SceneManager.LoadScene ("Start", LoadSceneMode.Single);
+
+	}
+
 
 	
 
