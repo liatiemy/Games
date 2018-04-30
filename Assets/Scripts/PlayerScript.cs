@@ -76,6 +76,7 @@ public class PlayerScript : MonoBehaviour {
 		if (c.gameObject.tag == "SubInimigo") {
 			PrincipalScript.vidas--;
 			if (PrincipalScript.vidas <= 0) {
+				animator.SetTrigger ("pMorrer");
 				StartCoroutine (GameOver ());	
 			} else {
 				StartCoroutine (perdeVida ());
@@ -139,7 +140,8 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
-	IEnumerator GameOver(){		
+	IEnumerator GameOver(){
+		yield return new WaitForSeconds (1f);
 		imagemGameOver.SetActive(true);
 		yield return new WaitForSeconds (2f);
 		SceneManager.LoadScene ("Start", LoadSceneMode.Single);
