@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{17D935BB-C59C-1D1A-5A9B-1948DC4A3448}</ProjectGuid>
+    <ProjectGuid>{2C8D6DA2-2945-FB65-CF9A-23EA206738D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,7 +60,7 @@
      <Compile Include="Assets\Scripts\SubInimigoScript.cs" />
      <Compile Include="Assets\Scripts\UIScript.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/Renato Gallis/Desktop/Games_lia/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/Renato Gallis/Desktop/Games/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>

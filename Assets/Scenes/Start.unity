@@ -628,7 +628,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Clique para come\xE7ar"
+  m_Text: " Enter para come\xE7ar"
 --- !u!222 &747617659
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1050,7 +1050,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtPontos: {fileID: 1388008262}
   txtVida: {fileID: 785517274}
-  txtResultado: {fileID: 1469107269}
 --- !u!1 &1688096426
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,8 @@ public class PlayerScript : MonoBehaviour {
 	//Transform eh o unico  componente do Sensor (GameObject)
 	public Transform chaoVerificador;
 	bool estaoNoChao;
-
+	public GameObject pontos;
+	public GameObject vidas;
 
 	SpriteRenderer spriteRender;
 	Rigidbody2D rb;
@@ -141,7 +142,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	IEnumerator GameOver(){
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (0.7f);
 		imagemGameOver.SetActive(true);
 		yield return new WaitForSeconds (2f);
 		SceneManager.LoadScene ("Start", LoadSceneMode.Single);
@@ -151,6 +152,8 @@ public class PlayerScript : MonoBehaviour {
 
 	IEnumerator Win(){
 		imagemWin.SetActive (true);
+		pontos.SetActive (false);
+		vidas.SetActive (false);
 		yield return new WaitForSeconds (1f);
 		SceneManager.LoadScene ("Start", LoadSceneMode.Single);
 
